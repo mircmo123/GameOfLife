@@ -22,7 +22,6 @@ namespace GameOfLife_XAML
     public partial class MainWindow : Window
     {
         private Game _game;
-
         public MainWindow()
         {
             InitializeComponent();
