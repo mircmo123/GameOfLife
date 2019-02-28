@@ -5,15 +5,10 @@ namespace GameOfLife_XAML
 {
     internal class Cell : Grid
     {
-        public int Row { get; set; }
-        public int Column { get; set; }
-
         private bool _alive;
 
-        public Cell(int row, int column)
+        public Cell()
         {
-            Row = row;
-            Column = column;
             MouseLeftButtonUp += Cell_MouseLeftButtonUp;
             MouseEnter += Cell_Hover;
             MouseLeave += Cell_MouseLeave;

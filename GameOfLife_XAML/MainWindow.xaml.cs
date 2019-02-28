@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace GameOfLife_XAML
 {
@@ -32,17 +19,22 @@ namespace GameOfLife_XAML
         {
             CellContainer.RowDefinitions.Clear();
             CellContainer.ColumnDefinitions.Clear();
-            for (int i = 0; i < 16; i++)
+            for (int i = 0; i < 32; i++)
             {
                 CellContainer.RowDefinitions.Add(new RowDefinition());
                 CellContainer.ColumnDefinitions.Add(new ColumnDefinition());
             }
-            _game = new Game(16, 16, CellContainer);
+            _game = new Game(32, 32, CellContainer);
         }
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
             _game.IsRunning = !_game.IsRunning;
+        }
+
+        private void btnRandomize_Click(object sender, RoutedEventArgs e)
+        {
+            _game.Randomize();
         }
     }
 }
