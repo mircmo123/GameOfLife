@@ -20,7 +20,6 @@ namespace GameOfLife_XAML
 
         public Game(int rows, int columns, Grid container, TimeSpan tickspeed)
         {
-            Random rnd = new Random();
             _timer.Interval = tickspeed;
             Rows = rows;
             Columns = columns;
@@ -29,7 +28,7 @@ namespace GameOfLife_XAML
             {
                 var cell = new Cell()
                 {
-                    Alive = rnd.Next(2) == 1,
+                    Alive = false,
                     VerticalAlignment = VerticalAlignment.Stretch,
                     HorizontalAlignment = HorizontalAlignment.Stretch,
                     Cursor = System.Windows.Input.Cursors.Hand
@@ -45,6 +44,12 @@ namespace GameOfLife_XAML
         internal void Clear()
         {
             ForeachCell((i, j) => Field[i, j].Alive = false);
+        }
+
+        internal void Randomize()
+        {
+            Random rnd = new Random();
+            ForeachCell((i, j) => Field[i, j].Alive = rnd.Next(2) == 1);
         }
 
         private void GameTick(object sender, EventArgs e)
