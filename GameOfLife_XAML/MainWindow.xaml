@@ -10,7 +10,8 @@
         <DockPanel>
             <StackPanel DockPanel.Dock="Top" Height="50" Orientation="Horizontal">
                 <Button Content="Generate" Padding="15, 5" Margin="5" Click="btnGenerate_Click"/>
-                <Button Content="Play" Padding="15,5" Margin="5" Click="btnPlay_Click"/>
+                <Button Name="btnPlay" Content="Play" Padding="15,5" Margin="5" Click="btnPlay_Click"/>
+                <Button Content="Clear Field" Padding="15,5" Margin="5" Click="btnClear_Click"/>
             </StackPanel>
             <Border BorderThickness="1" BorderBrush="Black">
                 <Grid Background="WhiteSmoke" Name="CellContainer"/>
