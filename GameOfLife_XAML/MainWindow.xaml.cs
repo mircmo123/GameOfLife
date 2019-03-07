@@ -38,5 +38,10 @@ namespace GameOfLife_XAML
             _game.IsRunning = !_game.IsRunning;
             btnPlay.Content = _game.IsRunning ? "Pause" : "Play";
         }
+
+        private void btnRandomize_Click(object sender, RoutedEventArgs e)
+        {
+            _game.Randomize();
+        }
     }
 }
